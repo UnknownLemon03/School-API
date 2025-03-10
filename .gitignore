@@ -1,5 +1,5 @@
-# Keep environment variables out of version control
+**/dist
+**/generated
 node_modules
 .env
 **/migrations
-dist
