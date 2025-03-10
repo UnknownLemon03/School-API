@@ -61,4 +61,4 @@ app.listen(3000, () => {
 
 setInterval(async ()=>{
     await getSchool();
-},1000*15)
+},1000*15*60)
