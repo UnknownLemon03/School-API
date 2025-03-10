@@ -17,6 +17,6 @@ export interface DBRes<T>{
 export const schooSchmen = z.object({
     name:z.string().trim().min(1,{message:"name is required"}),
     address : z.string().trim().min(1,{message:"address is required"}), 
-    latitude : z.number().min(1,{message:"latitude is required"}), 
-    longitude : z.number().min(1,{message:"longitude is required"}),
+    latitude : z.number().min(-90,{message:"latitude is required"}).max(90), 
+    longitude : z.number().min(-180,{message:"longitude is required"}).max(180),
 })
