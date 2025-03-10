@@ -34,7 +34,7 @@ app.get("/listSchools", async (req: Request, res: Response, next: NextFunction) 
         const { lat, lon } = req.query;
         if (!lat || !lon) throw new Error("Provide latitude and longitude");
         
-        const {data} = await getSchool(parseFloat(lat as string), parseFloat(lon as string));
+        const {data} = await getSchool();
         const schools  = sortSchool(data,{lan:parseFloat(lat as string),lat:parseFloat(lon as string)});
         res.json({
             success: true,
@@ -58,3 +58,7 @@ app.use((err: any, req: any, res: any, next: any) => {
 app.listen(3000, () => {
     console.log("API at 3000");
 });
+
+setInterval(async ()=>{
+    await getSchool();
+},1000*15)

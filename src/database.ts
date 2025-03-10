@@ -21,7 +21,7 @@ export async function addSchool(data:School):Promise<DBRes<School>>{
 
     return res as DBRes<School>;
 }
-export async function getSchool(lat:number,lan:number):Promise<DBRes<School[]>>{
+export async function getSchool():Promise<DBRes<School[]>>{
     const res =  {error:"",data:[],success:true} as DBRes<School[]>;
     try{
         res.data  =   await Prisma.school.findMany();
