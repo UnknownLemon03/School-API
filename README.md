@@ -10,10 +10,10 @@
 
 ```
 
-  GET /listSchools?lat=123.23&lon=1
+  GET /listSchools
 
 ```
-
+#### Url Params 
 | Parameter | Type   | Description                              |
 | :-------- | :----- | :--------------------------------------- |
 | `lat`     | `float`| **Required**. Latitude of the location   |
@@ -26,7 +26,7 @@
   POST /addSchool
 
 ```
-
+#### Body data 
 | Parameter  | Type   | Description                                   |
 | :--------- | :----- | :-------------------------------------------- |
 | `name`     | `string` | **Required**. Name of the school             |
